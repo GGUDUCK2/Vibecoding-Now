@@ -1,0 +1,44 @@
+# VibeCoding Now - Blogger 자동화 설정
+
+# RSS 피드 설정
+rss_feeds:
+  # 컬럼용 RSS (AI/개발 뉴스)
+  - url: "https://news.google.com/rss/search?q=AI+artificial+intelligence+programming&hl=ko&gl=KR&ceid=KR:ko"
+    category: "column"
+    name: "Google News AI"
+  
+  # Tips용 RSS
+  - url: "https://dev.to/feed"
+    category: "tips"
+    name: "DEV.to"
+
+# 발행 스케줄 (KST)
+schedule:
+  column:
+    time_range: "07:00-07:10"
+    label: "컬럼"
+  tips_concept:
+    time_range: "12:00-12:10"
+    label: "Tips"
+  tips_practical:
+    time_range: "19:00-19:10"
+    label: "Tips"
+
+# 시스템 설정
+system:
+  timezone: "Asia/Seoul"
+  max_posts_per_run: 1
+  dry_run: false
+
+# 재시도 정책
+retry:
+  max_attempts: 3
+  base_delay: 1.0
+  max_delay: 10.0
+  jitter_range: [0.1, 0.2]
+
+# Gemini 설정
+gemini:
+  model: "gemini-1.5-flash"
+  max_output_tokens: 4096
+  temperature: 0.7
